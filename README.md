@@ -9,9 +9,9 @@ Data and code used for estimating drift-diffusion models to behavioral responses
 The demo script `code/fit_driftdiffusionmodel.m` loads data and fits a drift-diffusion model using a genetic algorithm.
 
 # publications
-data and code used in:
+Data and code used in:
 >Jan Clemens, Jennifer Aufderheide (eq. contribution), Bernhard Ronacher, Evaluation of sensory cues for mating decisions in grasshoppers reveals influence of sexual selection. 2017, submitted
 
-parts of the data (behavioral response to gap stimuli) and a previous of the code were used in:
+Parts of the data (behavioral response to gap stimuli) and a previous version of the code used in:
 > Jan Clemens, Stefanie Krämer (eq. contribution), Bernhard Ronacher, Asymmetrical integration of evidence during courtship decisions in grasshoppers. 2014, PNAS, 111(46):16562–16567
 
