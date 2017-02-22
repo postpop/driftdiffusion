@@ -1,6 +1,7 @@
 function [er, param] = LEIpop(param, pa)
 % [er, param] = LEIpop(param, pa)
-
+% calls the error function stored as a hanlde in `pa.objFunInd` for each
+% individual in the population
 
 % rescale parameters from [-1 1] to [lb ub]
 for i = 1:size(param,2)
@@ -13,5 +14,6 @@ er = zeros(1,inds);
 for ind = 1:inds
    er(ind) = pa.objFunInd(param(ind,:), pa);
 end
+
 % convert error to a normalized fitness measure
 er = 1-er/var(pa.meanResp);

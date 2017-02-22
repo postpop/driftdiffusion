@@ -19,7 +19,7 @@ cumNoise = s.*pa.cumNoise;% scale by noise std %
 rrr = nan(1,pa.stis); % preallocate response for all stims
 allSti = randperm(length(pa.meanResp), ceil(length(pa.meanResp)*pa.batch));% shuffle noise
 
-for sti = 1:length(allSti)
+for sti = 1:length(allSti) % process each stimulus
    
    % add (cumulated) noise to cumulated evidence
    evi = bsxfun(@plus, cumNoise(:,:,sti) , intEvidence(:,allSti(sti)));
@@ -35,7 +35,7 @@ for sti = 1:length(allSti)
    idxPos = argmax(eviPos);
    idxNeg = argmax(eviNeg);
    
-   %s set response to whatever threshold crossing came first
+   % set response to whatever threshold crossing came first
    resp = sign(idxNeg-idxPos)>0;
    
    % if thresh was simultaneous, there was no thres cross -
@@ -46,5 +46,5 @@ for sti = 1:length(allSti)
    rrr(allSti(sti)) = mean(resp);
 end
 
-% overall mse over the stimulus set
+% mse over the stimulus set
 er = nanmean((rrr(allSti)-pa.meanResp(allSti)').^2);
